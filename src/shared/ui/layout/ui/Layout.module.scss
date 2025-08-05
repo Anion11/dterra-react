@@ -1,0 +1,24 @@
+@use '@/app/styles/utils/variables' as *;
+@use '@/app/styles/utils/media' as *;
+
+.wrapper {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  min-height: 100vh;
+  margin: 0 auto;
+
+  font-family: $font;
+
+  main {
+    display: flex;
+    flex: 1 0;
+    flex-direction: column;
+
+    > div {
+      flex: 1;
+    }
+  }
+}

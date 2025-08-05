@@ -1,0 +1,22 @@
+// media
+$mediaWidthTablet: 1259px;
+$mediaWidthMob: 767px;
+$mediaWidthMid: 1430px;
+
+:root {
+  --inner: 35px;
+
+  @media (max-width: $mediaWidthTablet) {
+    --inner: 24px;
+  }
+
+  @media (max-width: $mediaWidthMob) {
+    --inner: 16px;
+  }
+}
+
+// fonts
+$font: 'Circe', 'Arial', sans-serif;
+
+// colors
+$black: #191816;

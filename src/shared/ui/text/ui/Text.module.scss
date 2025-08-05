@@ -1,0 +1,63 @@
+@use '@/app/styles/utils/variables' as *;
+@use '@/app/styles/utils/media' as *;
+@use '@/app/styles/utils/fonts' as *;
+
+.text {
+  font-family: $font;
+
+  &_variant {
+    &-18 {
+      font-size: 18px;
+      line-height: 140%;
+
+      @include media-tablet {
+        font-size: 16px;
+      }
+    }
+
+    &-16 {
+      font-size: 16px;
+      line-height: 140%;
+
+      @include media-tablet {
+        font-size: 15px;
+      }
+    }
+
+    &-14 {
+      font-size: 14px;
+      line-height: 140%;
+
+      @include media-laptop {
+        font-size: 13px;
+      }
+    }
+
+    &-13 {
+      font-size: 13px;
+      line-height: 140%;
+
+      @include media-tablet {
+        font-size: 11px;
+      }
+    }
+  }
+
+  &_weight {
+    &-400 {
+      font-weight: 400;
+    }
+
+    &-600 {
+      font-weight: 600;
+    }
+
+    &-700 {
+      font-weight: 700;
+    }
+
+    &-300 {
+      font-weight: 300;
+    }
+  }
+}

@@ -1,6 +1,6 @@
 import { RouteObject } from 'react-router-dom';
 
-import { UiPageLazy } from '@/pages';
+import { ProductsPageLazy, UiPageLazy } from '@/pages';
 import Layout from '@/shared/ui/layout/ui/Layout';
 
 const routes: RouteObject[] = [
@@ -9,7 +9,7 @@ const routes: RouteObject[] = [
     element: <Layout />,
     children: [
       { path: '*', element: <div>Not Found</div> },
-      { path: '/', element: <div>Main</div> },
+      { path: '/products', element: <ProductsPageLazy /> },
       {
         path: '/ui',
         element: <UiPageLazy />

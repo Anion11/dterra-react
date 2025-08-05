@@ -1,0 +1,8 @@
+export enum EApplicationStatus {
+  PENDING = 'PENDING',
+  IN_ANALYZE = 'IN_ANALYZE',
+  SUCCESS = 'SUCCESS',
+  BREAK = 'BREAK',
+  WAIT_PAYMENT = 'WAIT_PAYMENT',
+  EXPIRED = 'EXPIRED'
+}

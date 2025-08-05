@@ -3,6 +3,7 @@ import { FC } from 'react';
 import Inner from '@/shared/ui/inner/ui/Inner';
 import Text from '@/shared/ui/text/ui/Text';
 import Title from '@/shared/ui/title/ui/Title';
+import { ProductList } from '@/widgets';
 
 const UiPage: FC = () => {
   return (
@@ -70,6 +71,7 @@ const UiPage: FC = () => {
           <Text variant="13">Text</Text>
         </div>
       </div>
+      <ProductList />
     </Inner>
   );
 };

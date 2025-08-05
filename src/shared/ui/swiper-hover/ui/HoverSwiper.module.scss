@@ -1,0 +1,57 @@
+@use '@/app/styles/utils/variables' as *;
+@use '@/app/styles/utils/media' as *;
+
+.swiper {
+  position: relative;
+  padding-bottom: 25px;
+
+  @include media-laptop {
+    padding-bottom: 20px;
+  }
+
+  &__wrapper {
+    align-items: stretch;
+  }
+
+  :global(.swiper-slide) {
+    height: auto;
+  }
+
+  :global(.swiper-pagination) {
+    position: absolute;
+    z-index: 10;
+    right: 0;
+    bottom: 5px;
+    left: 0;
+
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+  }
+
+  :global(.swiper-pagination-bullet) {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+
+    background: $black;
+    border: none;
+    border-radius: 4px;
+
+    transition: all 0.3s ease;
+
+    @include media-laptop {
+      width: 6px;
+      height: 6px;
+      border-radius: 3px;
+    }
+  }
+
+  :global(.swiper-pagination-bullet-active) {
+    width: 20px;
+
+    @include media-laptop {
+      width: 15px;
+    }
+  }
+}

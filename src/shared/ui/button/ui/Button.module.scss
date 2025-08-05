@@ -1,0 +1,42 @@
+@use '@/app/styles/utils/variables' as *;
+@use '@/app/styles/utils/media' as *;
+
+.button {
+  cursor: pointer;
+
+  position: relative;
+
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  justify-content: center;
+
+  padding: 13px 48px;
+
+  color: $black;
+  text-align: center;
+  text-decoration: none;
+  text-decoration: none;
+  text-wrap: nowrap;
+
+  background: $primary;
+  border: 0;
+  border-radius: 4px;
+
+  transition: all 0.3s;
+
+  @include media-tablet {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  @include media-hover {
+    text-decoration: none;
+    background: $primaryHover;
+  }
+
+  &:active,
+  &:hover {
+    text-decoration: none;
+  }
+}

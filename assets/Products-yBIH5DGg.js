@@ -1,1 +1,0 @@
-import{j as t}from"./index-Drnjm5wk.js";import{I as r,T as s,a,P as o}from"./ProductList-BTYbCADg.js";const n=()=>t.jsxs(r,{children:[t.jsx(s,{tag:"h1",variant:"36",style:{marginBottom:"10px"},children:"Страница продуктов"}),t.jsx(a,{variant:"18",style:{marginBottom:"40px"},children:"Покупайте наши продукты с выгодой. Реально выгодно :)"}),t.jsx(o,{})]});export{n as default};

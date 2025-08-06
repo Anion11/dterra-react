@@ -1,13 +1,18 @@
 import { FC } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 
 import style from './Layout.module.scss';
+
+import Text from '@/shared/ui/text/ui/Text';
 
 const Layout: FC = () => {
   return (
     <div className={style.wrapper}>
       <header
         style={{
+          display: 'flex',
+          gap: '10px',
+          justifyContent: 'center',
           backgroundColor: '#2c3e50',
           color: 'white',
           padding: '1rem 2rem',
@@ -15,7 +20,12 @@ const Layout: FC = () => {
           boxShadow: '0 2px 10px rgba(0, 0, 0, 0.2)'
         }}
       >
-        header
+        <Text variant="18">
+          <Link to="/ui">UI</Link>
+        </Text>
+        <Text variant="18">
+          <Link to="/products">Products</Link>
+        </Text>
       </header>
       <main style={{ paddingTop: '20px', paddingBottom: '20px' }}>
         <Outlet />

@@ -40,9 +40,46 @@ export const useGetProducts = () => {
     }
   };
 
+  const getProductsFetch = async () => {
+    try {
+      const fetchResponse = await fetch('https://jsonplaceholder.typicode.com/albums', {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' }
+      });
+
+      const fetchData: Pick<IProductCard, 'id' | 'userId' | 'title'>[] = await fetchResponse.json();
+
+      const data = fetchData.map(item => ({
+        ...item,
+        price: item.id * 1000 /* Мок ибо негде брать */,
+        images: [MockImage1, MockImage2] /* Мок ибо негде брать */
+      }));
+
+      const filterDataEven = data.filter(
+        (item, index) => index % 2 === 0
+      ); /* берем каждый второй */
+
+      const filterData = filterDataEven.map((item, index) =>
+        index % 3 === 0 ? { ...item, title: undefined } : item
+      ); /* у каждого 3 из оставшихся у нас title = undefined */
+
+      const allIds = filterData.reduce((acc, item, index) => {
+        return acc + (index !== 0 ? ', ' : '') + item.id;
+      }, 'Все id товаров: '); /* reduce для id */
+
+      setProductsIds(allIds);
+
+      setProducts(filterData);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   useEffect(() => {
-    getProducts();
+    // getProducts();
+
+    getProductsFetch();
   }, []);
 
-  return { products, productsIds };
+  return { products, productsIds, getProducts, getProductsFetch };
 };

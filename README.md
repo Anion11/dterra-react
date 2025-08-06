@@ -1,69 +1,57 @@
-# React + TypeScript + Vite
+# Задания и пояснения
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<u>1 и 2 задания были выполнены с небольшими изменениями, но выполняют все их требования</u>
 
-Currently, two official plugins are available:
+## 1. сверстать блок http://joxi.ru/krDnjEgidElxM2 (https://market.yandex.ru/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<u>был выбран свободный стиль интернет магазина т.к ЯМаркет уже не тот что был раньше</u>
 
-## Expanding the ESLint configuration
+### Требования:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
++ для стилизации использовать less <u>(был использован sass, но разницы по сути своей нет, saas как будто даже приятнее и удобнее)</u>
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
++ горизонтальный скролл категорий
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
++ кнопки “в корзину” должны быть выровнены на одном уровне (если текст названия товара будет большой высоты, соответственно, элемент товара будет выше остальных, кнопка не должна быть “ниже” других - другие товары должны подстраиваться по высоте)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
++ адаптив (количество слайдов - на свое усмотрение)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
++ слайдер - swiper + его же оболочка для react
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
++ разбить проект на компоненты по зоне ответственности (ui, блоки-элементы)
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+<hr>
+
+## 2. реализовать react-компонент получения данных со стороннего сервиса (https://jsonplaceholder.typicode.com/users) и вывести данные на странице
+
+<u>
+было принято решение соединить 1 и 2 задание, и через jsonplaceholder получать данные и отображать в виде карточек магазина, как по мне логично чтобы задания были связаны между собой и в конечном итоге сделать< к примеру, целую работающую страничку
+
+Соответственно поля данных отличаются от тех, что в задании, но вся логика одна и та же
+
+Примечание: на jsonplaceholder нет прям товаров, поэтому я кастомно их составил из запроса на albums (хотел сделать еще запрос на картинки, но они не работают)
+</u>
+
+
+
+### Требования:
+
++ es6+ синтаксис
+
++ вывести каждый второй полученный элемент путем фильтрации
+
++ предусмотреть вероятность получения null/undefined для address -> geo -> lat и lng. для проверки - после получения данных перебрать массив объектов данных и каждому 3 элементу проставить null для этих значений (пустое значение title)
+
++ записать имя, фамилию и email в одной строке в формате имя, фамилия -> email (Продает пользователь {userId} по цене {price})
+
++ при переборе данных использовать деструктуризацию
+
++ вывести lat и lng, если они есть, иначе - вывести значение присвоенное значение по-умолчанию, которое должно быть “не определено” (если нет title выводится не определено)
+
++ вверху списка вывести список id полученных юзеров, используя reduce (в моем случае товаров)
+
++ для получения данных использовать fetch и async/await (+ axios, думаю надо сразу и то и то проверять)
+
++ для каждого выведенного юзера должна быть проставлена ссылка с любым текстом, href - https://<address -> street>.ru, при клике на ссылку должен осуществляться не переход, а вывод adress->street в консоль (для каждой карточки проставляется ссылка /product/${id} + на кнопку купить выводится в консоль В корзину добавлен товар: ${id} от пользователя: ${userId})
+
++ использовать только нативный js, без библиотек (только axios, но есть и вариант без него)

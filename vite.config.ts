@@ -6,29 +6,34 @@ import svg from 'vite-plugin-svgr';
 import path from 'path';
 
 // https://vite.dev/config/
-export default defineConfig({
-  resolve: {
-    alias: {
-      '@': path.resolve(path.dirname(''), './src')
-    }
-  },
+export default defineConfig(({ mode }) => {
+  const base = mode === 'development' ? '/' : '/dterra-react/';
 
-  css: {
-    preprocessorOptions: {
-      scss: {
-        silenceDeprecations: ['legacy-js-api']
+  return {
+    base,
+    resolve: {
+      alias: {
+        '@': path.resolve(path.dirname(''), './src')
       }
-    }
-  },
+    },
 
-  plugins: [
-    react(),
-    svg(),
-    viteEslint({
-      failOnError: false
-    }),
-    viteStylelint({
-      lintInWorker: true
-    })
-  ]
+    css: {
+      preprocessorOptions: {
+        scss: {
+          silenceDeprecations: ['legacy-js-api']
+        }
+      }
+    },
+
+    plugins: [
+      react(),
+      svg(),
+      viteEslint({
+        failOnError: false
+      }),
+      viteStylelint({
+        lintInWorker: true
+      })
+    ]
+  };
 });

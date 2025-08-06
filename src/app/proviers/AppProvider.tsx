@@ -9,7 +9,7 @@ interface IProps {
 
 const AppProvider: FC<IProps> = ({ children }) => {
   return (
-    <Router>
+    <Router basename="dterra-react">
       <ServiceProvider>
         <Routes>{children}</Routes>
       </ServiceProvider>

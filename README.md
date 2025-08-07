@@ -2,7 +2,7 @@
 
 <u>1 и 2 задания были выполнены с небольшими изменениями, но выполняют все их требования</u>
 
-pages https://anion11.github.io/ui
+pages https://anion11.github.io/dterra-react
 
 ## 1. сверстать блок http://joxi.ru/krDnjEgidElxM2 (https://market.yandex.ru/)
 

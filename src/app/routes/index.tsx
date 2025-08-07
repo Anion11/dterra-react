@@ -1,7 +1,7 @@
 import { RouteObject } from 'react-router-dom';
 
-import { ProductsPageLazy, UiPageLazy } from '@/pages';
-import Layout from '@/shared/ui/layout/ui/Layout';
+import { ProductsPageLazy, TodoConnectPageLazy, TodoPageLazy, UiPageLazy } from '@/pages';
+import Layout from '@/widgets/layout/ui/Layout';
 
 const routes: RouteObject[] = [
   {
@@ -13,6 +13,14 @@ const routes: RouteObject[] = [
       {
         path: '/ui',
         element: <UiPageLazy />
+      },
+      {
+        path: '/todos',
+        element: <TodoPageLazy />
+      },
+      {
+        path: '/todos-connect',
+        element: <TodoConnectPageLazy />
       }
     ]
   }

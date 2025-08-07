@@ -3,7 +3,7 @@ import { FC } from 'react';
 import style from './ProductList.module.scss';
 
 import { ProductCard } from '@/entities';
-import { useGetProducts } from '@/entities/product-card/model/useGetProducts';
+import { useGetProducts } from '@/entities/product/model/useGetProducts';
 import { ICategory } from '@/features/category-list/model/ICategoryList';
 import CategoryList from '@/features/category-list/ui/CategoryList';
 import Text from '@/shared/ui/text/ui/Text';

@@ -1,0 +1,14 @@
+.container {
+  padding: 15px;
+
+  color: #ffffff;
+  list-style: none;
+
+  background: rgb(241, 132, 132);
+  border-radius: 8px;
+
+  &_completed {
+    color: black;
+    background: rgb(156, 250, 156);
+  }
+}

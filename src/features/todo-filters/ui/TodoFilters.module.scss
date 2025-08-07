@@ -1,0 +1,35 @@
+@use '@/app/styles/utils/variables' as *;
+@use '@/app/styles/utils/media' as *;
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  &__group {
+    padding: 15px;
+    border: 1px solid #eeeeee;
+    border-radius: 8px;
+  }
+
+  &__options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  &__option {
+    cursor: pointer;
+    padding: 5px 10px;
+    border: 1px solid $black;
+    border-radius: 4px;
+
+    input {
+      display: none;
+    }
+
+    &_active {
+      background-color: $primary;
+    }
+  }
+}

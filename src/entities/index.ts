@@ -1,3 +1,4 @@
-import ProductCard from './product-card/ui/ProductCard';
+import ProductCard from './product/ui/ProductCard';
+import TodoItem from './todo/ui/TodoItem';
 
-export { ProductCard };
+export { ProductCard, TodoItem };

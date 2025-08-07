@@ -26,6 +26,12 @@ const Layout: FC = () => {
         <Text variant="18">
           <Link to="/products">Products</Link>
         </Text>
+        <Text variant="18">
+          <Link to="/todos">Todos</Link>
+        </Text>
+        <Text variant="18">
+          <Link to="/todos-connect">Todos connect</Link>
+        </Text>
       </header>
       <main style={{ paddingTop: '20px', paddingBottom: '20px' }}>
         <Outlet />

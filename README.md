@@ -58,7 +58,7 @@ pages https://anion11.github.io/dterra-react
 
 + использовать только нативный js, без библиотек (только axios, но есть и вариант без него)
 
-
+<hr>
 
 ## 3. React + redux + работа с api. Реализовать список с фильтрацией. список - https://jsonplaceholder.typicode.com/todos, фильтры - по Completed и userId.
 
